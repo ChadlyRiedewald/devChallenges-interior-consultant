@@ -22,7 +22,7 @@ html {
   height: 100vh;
 }
 .page__container {
-  width: 95vw;
+  width: 80vw;
   justify-content: space-between;
   height: 100%;
 }
@@ -44,10 +44,6 @@ html {
   align-items: center;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .margin {
   margin: auto;
 }
@@ -67,7 +63,7 @@ html {
 /* ==========||        3. CONTENT               ||========== */
 /* ==========||         3.1 HEADER              ||========== */
 .header {
-  margin-top: 2.7rem;
+  margin-top: 4.2rem;
   justify-content: space-between;
   width: 100%;
   margin-inline: auto;
@@ -83,23 +79,9 @@ html {
 }
 
 /* ==========||         3.2 MENU                ||========== */
-.menu {
-  position: fixed;
-  left: -100%;
-  flex: 0 0 100%;
-  background-color: #181719;
-  padding-top: 20rem;
-  width: 100%;
-  height: 100%;
-  transition: 0.3s;
-  z-index: 1;
-}
-.menu--active {
-  left: 0;
-}
 .menu__list {
   list-style-type: none;
-  gap: 4.8rem;
+  gap: 8.6rem;
 }
 .menu__link {
   font-family: "Montserrat", sans-serif;
@@ -121,55 +103,53 @@ html {
 }
 
 .hamburger {
-  cursor: pointer;
-  z-index: 2;
-}
-.hamburger__bar {
-  display: block;
-  width: 2.85rem;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: #fff;
-}
-.hamburger--active .hamburger__bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-  position: fixed;
-  z-index: 2;
-}
-.hamburger--active .hamburger__bar:nth-child(2) {
-  opacity: 0;
-}
-.hamburger--active .hamburger__bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-  position: fixed;
-  z-index: 2;
+  display: none;
 }
 
 /* ==========||         3.3 MAIN                ||========== */
+.header-main-container {
+  width: 100%;
+}
+
 .main-content {
-  margin-top: 3.8rem;
+  margin-top: 25rem;
   width: 100%;
 }
 
 /* ==========||           3.3.1 CARD            ||========== */
+.wrapper-flex {
+  flex: 0 1 50%;
+  gap: 10%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picture-caption {
+  flex: 1 0 50%;
+}
+
 .card {
-  gap: 2.5rem;
+  gap: 4rem;
 }
 .card__header {
   font-family: "Lora", serif;
-  font-size: 3.6rem;
+  font-size: 4.8rem;
 }
-.card__body, .card__link {
-  font-size: 1.4rem;
+.card__body {
+  font-size: 2.4rem;
   width: 25ch;
 }
 .card__link {
+  font-size: 1.8rem;
   color: #fff;
   text-decoration: none;
   position: relative;
   display: block;
+  transition: 0.5s ease;
+}
+.card__link:hover {
+  color: #cccccc;
 }
 .card__link::after {
   content: "";
@@ -184,11 +164,12 @@ html {
 .card__link:hover::after {
   width: 5rem;
   transition: 0.3s;
+  background-color: #cccccc;
 }
 
 /* ==========||           3.3.2 PICTURE         ||========== */
 .picture {
-  margin-top: 2.5rem;
+  width: 100%;
 }
 .picture--xs {
   margin: 0;
@@ -203,41 +184,43 @@ html {
 
 /* ==========||           3.3.3 CAPTION         ||========== */
 .wrapper {
-  width: 85vw;
+  width: 90%;
   justify-content: flex-end;
 }
 
 .caption-card {
   background-color: #181719;
-  width: 80vw;
-  height: 13.8rem;
+  position: absolute;
+  width: 30vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: -4vh;
-  margin-bottom: 6rem;
-  padding: 1.6rem 2rem;
+  padding: 2rem 2.6rem;
   gap: 2rem;
 }
 .caption-card__upside {
-  width: 100%;
   align-items: center;
   gap: 2rem;
 }
 .caption-card__header {
-  gap: 0.6rem;
+  gap: 0.8rem;
 }
 .caption-card__name {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .caption-card__function {
   color: #828282;
+  font-size: 1.2rem;
 }
 .caption-card__body {
   font-family: "Lora", serif;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   width: 17ch;
 }
 
 /* ==========||         3.4 FOOTER              ||========== */
+.footer {
+  margin-top: 26rem;
+}
 .footer__text {
   color: #a9a9a9;
   font-size: 1.4rem;
@@ -251,8 +234,116 @@ html {
 }
 
 /* ==========||        4. MEDIA QUERIES         ||========== */
-@media (min-width: 830px) {
+@media (max-width: 830px) {
+  /* ==||    1. GENERAL STYLES    ||== */
+  .page__container {
+    width: 95vw;
+  }
+
+  /* ==||    3. CONTENT           ||== */
+  /* ==||     3.1 HEADER          ||== */
+  .header {
+    margin-top: 2.7rem;
+  }
+
+  /* ==||     3.2 MENU            ||== */
+  .menu {
+    position: fixed;
+    background-color: #181719;
+    left: -100%;
+    flex: 0 0 100%;
+    padding-top: 20rem;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    z-index: 1;
+  }
+  .menu--active {
+    left: 0;
+  }
+  .menu__list {
+    flex-direction: column;
+    list-style-type: none;
+    gap: 4.8rem;
+  }
+
   .hamburger {
-    display: none;
+    display: block;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .hamburger__bar {
+    display: block;
+    width: 2.85rem;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+  }
+  .hamburger--active .hamburger__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    position: fixed;
+    z-index: 2;
+  }
+  .hamburger--active .hamburger__bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger--active .hamburger__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    position: fixed;
+    z-index: 2;
+  }
+
+  /* ==||     3.3 MAIN            ||== */
+  .main-content {
+    margin-top: 3.8rem;
+  }
+
+  /* ==||       3.3.1 CARD        ||== */
+  .wrapper-flex {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .card {
+    gap: 2.5rem;
+    align-self: flex-start;
+  }
+  .card__header {
+    font-size: 3.6rem;
+  }
+  .card__body, .card__link {
+    font-size: 1.4rem;
+    width: 25ch;
+  }
+
+  /* ==||       3.3.2 PICTURE     ||== */
+  .picture {
+    margin-top: 2.5rem;
+  }
+
+  /* ==||       3.3.3 CAPTION     ||== */
+  .wrapper {
+    width: 85vw;
+  }
+
+  .caption-card {
+    width: 80vw;
+    padding: 1.6rem 2rem;
+  }
+  .caption-card__header {
+    gap: 0.6rem;
+  }
+  .caption-card__name {
+    font-size: 1.2rem;
+  }
+  .caption-card__body {
+    font-size: 1.8rem;
+  }
+
+  /* ==||     3.3 FOOTER          ||== */
+  .footer {
+    margin-top: 17rem;
   }
 }
