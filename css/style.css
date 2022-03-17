@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@500;700&family=Montserrat:wght@400;500;700&display=swap");
+/* TABLE OF CONTENT */
+/* ==||    1. GENERAL STYLES    ||== */
+/* ==||    2. UTILITIES         ||== */
+/* ==||    3. CONTENT           ||== */
+/* ==||    4. MEDIA QUERIES     ||== */
+/* ==========||        1. GENERAL STYLES        ||========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.page {
+  background-color: #181719;
+  color: #fff;
+  height: 100vh;
+}
+.page__container {
+  width: 95vw;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* ==========||        2. UTILITIES             ||========== */
+.flex {
+  display: flex;
+}
+.flex--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin {
+  margin: auto;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* ==========||        3. CONTENT               ||========== */
+/* ==========||         3.1 HEADER              ||========== */
+.header {
+  margin-top: 2.7rem;
+  justify-content: space-between;
+  width: 100%;
+  margin-inline: auto;
+  flex-wrap: wrap;
+}
+.header__logo {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.4rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  padding: 8px 8px 7px 8px;
+  border: 1px solid;
+}
+
+/* ==========||         3.2 MENU                ||========== */
+.menu {
+  position: fixed;
+  left: -100%;
+  flex: 0 0 100%;
+  background-color: #181719;
+  padding-top: 20rem;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  z-index: 1;
+}
+.menu--active {
+  left: 0;
+}
+.menu__list {
+  list-style-type: none;
+  gap: 4.8rem;
+}
+.menu__link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 0.8rem;
+  transition: 0.5s ease;
+}
+.menu__link:hover {
+  color: #cccccc;
+}
+.menu__link--current {
+  font-weight: 700;
+  border-bottom: 2px solid #fff;
+}
+.menu__link--current:hover {
+  border-bottom: 2px solid #cccccc;
+}
+
+.hamburger {
+  cursor: pointer;
+  z-index: 2;
+}
+.hamburger__bar {
+  display: block;
+  width: 2.85rem;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+.hamburger--active .hamburger__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  position: fixed;
+  z-index: 2;
+}
+.hamburger--active .hamburger__bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger--active .hamburger__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  position: fixed;
+  z-index: 2;
+}
+
+/* ==========||         3.3 MAIN                ||========== */
+.main-content {
+  margin-top: 3.8rem;
+  width: 100%;
+}
+
+/* ==========||           3.3.1 CARD            ||========== */
+.card {
+  gap: 2.5rem;
+}
+.card__header {
+  font-family: "Lora", serif;
+  font-size: 3.6rem;
+}
+.card__body, .card__link {
+  font-size: 1.4rem;
+  width: 25ch;
+}
+.card__link {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+.card__link::after {
+  content: "";
+  position: absolute;
+  width: 2.5rem;
+  height: 2px;
+  margin-inline: 0.8em;
+  top: 50%;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.card__link:hover::after {
+  width: 5rem;
+  transition: 0.3s;
+}
+
+/* ==========||           3.3.2 PICTURE         ||========== */
+.picture {
+  margin-top: 2.5rem;
+}
+.picture--xs {
+  margin: 0;
+}
+.picture__img {
+  width: 100%;
+}
+.picture__img--xs {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+/* ==========||           3.3.3 CAPTION         ||========== */
+.wrapper {
+  width: 85vw;
+  justify-content: flex-end;
+}
+
+.caption-card {
+  background-color: #181719;
+  width: 80vw;
+  height: 13.8rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: -4vh;
+  margin-bottom: 6rem;
+  padding: 1.6rem 2rem;
+  gap: 2rem;
+}
+.caption-card__upside {
+  width: 100%;
+  align-items: center;
+  gap: 2rem;
+}
+.caption-card__header {
+  gap: 0.6rem;
+}
+.caption-card__name {
+  font-size: 1.2rem;
+}
+.caption-card__function {
+  color: #828282;
+}
+.caption-card__body {
+  font-family: "Lora", serif;
+  font-size: 1.8rem;
+  width: 17ch;
+}
+
+/* ==========||         3.4 FOOTER              ||========== */
+.footer__text {
+  color: #a9a9a9;
+  font-size: 1.4rem;
+  margin: 0 auto 2.4rem auto;
+  text-align: center;
+  width: 100%;
+}
+.footer__link {
+  color: #a9a9a9;
+  text-decoration: none;
+}
+
+/* ==========||        4. MEDIA QUERIES         ||========== */
+@media (min-width: 830px) {
+  .hamburger {
+    display: none;
+  }
+}
