@@ -36,9 +36,6 @@
 
 ## Overview
 
-![screenshot](https://chadlyriedewald.github.io/devChallenges-interior-consultant/assets/desktop.png)
-![screenshot](https://chadlyriedewald.github.io/devChallenges-interior-consultant/assets/mobile.png)
-
 First time working with Sass, JavaScript & BEM. I had recently learned about these topics and tried to implement them all into this project.
 
 ### Built With
